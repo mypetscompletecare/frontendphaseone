@@ -1,6 +1,14 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import { Popover } from '@mui/material';
+import { Popover, styled } from '@mui/material';
+
+const ButtonStyle = styled((props) => <Button {...props} />)(({ theme }) => ({
+  ...theme.typography.body1,
+  position: 'relative',
+  textTransform: 'capitalize',
+  color: theme.palette.text.primary,
+  backgroundColor: theme.palette.common.white,
+}));
 
 export default function DropdownMenu({
   anchorElm,
@@ -10,6 +18,7 @@ export default function DropdownMenu({
   PaperProps,
   handleMenuOpen,
   handleMenuClose,
+  fullWidthPopover,
   ...rest
 }) {
   const [anchorEl, setAnchorEl] = React.useState(anchorElm ? anchorElm : null);
@@ -23,7 +32,7 @@ export default function DropdownMenu({
   console.log('btnId ===>', btnId);
   return (
     <>
-      <Button
+      <ButtonStyle
         id={btnId}
         aria-controls={isMenuOpen ? btnId : undefined}
         aria-haspopup="true"
@@ -35,11 +44,10 @@ export default function DropdownMenu({
         {...rest}
       >
         {btnLable}
-      </Button>
+      </ButtonStyle>
 
       <Popover
         id={btnId}
-        // sx={{ marginTop: '8px' }}
         onMouseLeave={handleMenuClose}
         anchorEl={anchorElm ? anchorElm : anchorEl}
         anchorOrigin={{
@@ -58,6 +66,7 @@ export default function DropdownMenu({
           sx: {
             pointerEvents: 'auto',
           },
+          style: fullWidthPopover && { width: '100%' },
         }}
       >
         {menuContainer}

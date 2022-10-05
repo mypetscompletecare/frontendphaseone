@@ -4,12 +4,10 @@ import { useTheme, styled } from '@mui/material/styles';
 import { AppBar, Box, Container, Grid, Paper } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import DropdownMenu from '../Dropdown/dropdown';
-import {
-  MenuOptionsForCats,
-  MenuOptionsForDogs,
-  MenuOptionsForLargeAnimal,
-  MenuOptionsForSmallAnimal,
-} from './MenuOptions';
+import DogstabContainer from './NavbarTabs/DogstabContainer';
+import SmallAnimalTabsContainer from './NavbarTabs/SmallAnimalTabsContainer';
+import CatstabContainer from './NavbarTabs/CatstabContainer';
+import LargeAnimaltabs from './NavbarTabs/LargeAnimaltabs';
 
 // ----------------------------------------------------------------------
 
@@ -105,7 +103,8 @@ export default function BottomAppbar() {
                   endIcon={<KeyboardArrowDownIcon />}
                   handleMenuOpen={handleClickOpen}
                   handleMenuClose={handleClose}
-                  menuContainer={<MenuOptionsForDogs />}
+                  menuContainer={<DogstabContainer />}
+                  fullWidthPopover={true}
                 />
                 <DropdownMenu
                   anchorElm={PageAnchor.cats}
@@ -114,7 +113,8 @@ export default function BottomAppbar() {
                   endIcon={<KeyboardArrowDownIcon />}
                   handleMenuOpen={handleClickOpen}
                   handleMenuClose={handleClose}
-                  menuContainer={<MenuOptionsForCats />}
+                  menuContainer={<CatstabContainer />}
+                  fullWidthPopover={true}
                 />
                 <DropdownMenu
                   anchorElm={PageAnchor.smallAnimal}
@@ -123,7 +123,8 @@ export default function BottomAppbar() {
                   endIcon={<KeyboardArrowDownIcon />}
                   handleMenuOpen={handleClickOpen}
                   handleMenuClose={handleClose}
-                  menuContainer={<MenuOptionsForSmallAnimal />}
+                  menuContainer={<SmallAnimalTabsContainer />}
+                  fullWidthPopover={true}
                 />
                 <DropdownMenu
                   anchorElm={PageAnchor.largeAnimal}
@@ -132,7 +133,8 @@ export default function BottomAppbar() {
                   endIcon={<KeyboardArrowDownIcon />}
                   handleMenuOpen={handleClickOpen}
                   handleMenuClose={handleClose}
-                  menuContainer={<MenuOptionsForLargeAnimal />}
+                  menuContainer={<LargeAnimaltabs />}
+                  fullWidthPopover={true}
                 />
               </Grid>
             </Grid>
