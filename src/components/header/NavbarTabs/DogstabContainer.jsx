@@ -8,11 +8,12 @@ import {
   ListItemText,
   Paper,
 } from '@mui/material';
+import PetsIcon from '@mui/icons-material/Pets';
 
 export default function DogstabContainer() {
   const TabRowData = [
     {
-      icon: 'f',
+      icon: <PetsIcon />,
       title: 'food',
       tabLinks: [
         { label: 'Puppy Corner' },

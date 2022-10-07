@@ -7,7 +7,6 @@ const ButtonStyle = styled((props) => <Button {...props} />)(({ theme }) => ({
   position: 'relative',
   textTransform: 'capitalize',
   color: theme.palette.text.primary,
-  backgroundColor: theme.palette.common.white,
 }));
 
 export default function DropdownMenu({

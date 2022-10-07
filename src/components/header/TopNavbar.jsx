@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { alpha, useTheme, styled } from '@mui/material/styles';
+import { useTheme, styled } from '@mui/material/styles';
 import {
   AppBar,
   Badge,
@@ -8,28 +8,33 @@ import {
   Button,
   Container,
   Grid,
-  IconButton,
   TextField,
   Toolbar,
   Typography,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import DropdownMenu from '../Dropdown/dropdown';
+import SupportTabContainer from './NavbarTabs/SupportTabContainer';
 
 // ----------------------------------------------------------------------
 
 const AppBarStyle = styled((props) => <AppBar {...props} />)(({ theme }) => ({
-  ...theme.typography.body2,
+  ...theme.typography.body1,
   position: 'relative',
   textTransform: 'capitalize',
   color: theme.palette.text.secondary,
-  backgroundColor: theme.palette.common.white,
+  backgroundColor: theme.palette.navbar.light,
 }));
 
 export default function TopAppbar() {
   const theme = useTheme();
+  const [PageAnchor, setPageAnchor] = React.useState({
+    supportCall: null,
+  });
+  const SupportCall = Boolean(PageAnchor.supportCall);
+
   return (
     <AppBarStyle position="static">
       <Toolbar>
@@ -47,16 +52,18 @@ export default function TopAppbar() {
             </Grid>
             <Grid item xs={4}>
               <Grid container flex={'row'} justifyContent={'space-evenly'}>
-                <Button
+                <DropdownMenu
+                  anchorElm={PageAnchor.supportCall}
                   startIcon={<SupportAgentIcon />}
-                  sx={{
-                    textTransform: 'none',
-                    color: theme.palette.text.primary,
-                  }}
-                >
-                  {' '}
-                  Support
-                </Button>
+                  btnLable="Support"
+                  isMenuOpen={SupportCall}
+                  handleMenuOpen={({ target }) =>
+                    setPageAnchor({ supportCall: target })
+                  }
+                  handleMenuClose={() => setPageAnchor({ supportCall: null })}
+                  menuContainer={<SupportTabContainer />}
+                />
+
                 <Button
                   startIcon={<PermIdentityOutlinedIcon />}
                   sx={{
@@ -65,7 +72,7 @@ export default function TopAppbar() {
                   }}
                 >
                   {' '}
-                  Support
+                  login
                 </Button>
                 <Button
                   startIcon={

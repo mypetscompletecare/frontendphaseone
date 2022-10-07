@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { useTheme, styled } from '@mui/material/styles';
-import { AppBar, Box, Container, Grid, Paper } from '@mui/material';
+import { AppBar, Box, Container, Grid } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import DropdownMenu from '../Dropdown/dropdown';
 import DogstabContainer from './NavbarTabs/DogstabContainer';
@@ -16,9 +16,9 @@ const AppBarStyle = styled((props) => <AppBar {...props} />)(({ theme }) => ({
   position: 'relative',
   textTransform: 'capitalize',
   color: theme.palette.text.secondary,
-  backgroundColor: theme.palette.common.white,
+  backgroundColor: theme.palette.navbar.light,
   boxShadow: 'none',
-  // border: '1px solid red',
+  paddingTop: '2px',
   minHeight: '40px',
   height: 'auto',
 }));
@@ -30,12 +30,16 @@ export default function BottomAppbar() {
     cats: null,
     largeAnimal: null,
     smallAnimal: null,
+    brandOpen: null,
+    consultant: null,
   });
 
   const DogOpen = Boolean(PageAnchor.dog);
   const CatOpen = Boolean(PageAnchor.cats);
   const LargeAnimalOpen = Boolean(PageAnchor.largeAnimal);
   const SmallAnimalOpen = Boolean(PageAnchor.smallAnimal);
+  const BrandOpen = Boolean(PageAnchor.brandOpen);
+  const ConsultantOpen = Boolean(PageAnchor.consultant);
 
   const handleClickOpen = (event) => {
     switch (event.currentTarget.id) {
@@ -45,6 +49,8 @@ export default function BottomAppbar() {
           cats: null,
           largeAnimal: null,
           smallAnimal: null,
+          brandOpen: null,
+          consultant: null,
         });
       case 'Cats':
         return setPageAnchor({
@@ -52,6 +58,8 @@ export default function BottomAppbar() {
           cats: event.currentTarget,
           largeAnimal: null,
           smallAnimal: null,
+          brandOpen: null,
+          consultant: null,
         });
       case 'Smallanimal':
         return setPageAnchor({
@@ -59,6 +67,8 @@ export default function BottomAppbar() {
           cats: null,
           largeAnimal: null,
           smallAnimal: event.currentTarget.id,
+          brandOpen: null,
+          consultant: null,
         });
       case 'Largeanimal':
         return setPageAnchor({
@@ -66,8 +76,27 @@ export default function BottomAppbar() {
           cats: null,
           smallAnimal: null,
           largeAnimal: event.currentTarget,
+          brandOpen: null,
+          consultant: null,
         });
-
+      case 'Brands':
+        return setPageAnchor({
+          dog: null,
+          cats: null,
+          smallAnimal: null,
+          largeAnimal: null,
+          brandOpen: event.currentTarget,
+          consultant: null,
+        });
+      case 'Consultant':
+        return setPageAnchor({
+          dog: null,
+          cats: null,
+          smallAnimal: null,
+          largeAnimal: null,
+          brandOpen: null,
+          consultant: event.currentTarget,
+        });
       default:
         console.log('default runs');
         setPageAnchor({
@@ -85,6 +114,8 @@ export default function BottomAppbar() {
       cats: null,
       largeAnimal: null,
       smallAnimal: null,
+      brandOpen: null,
+      consultant: null,
     });
   };
 
@@ -94,7 +125,7 @@ export default function BottomAppbar() {
         <Box component={Container}>
           <Grid container flex={'row'} justifyContent={'space-between'}>
             <Grid item xs={12}>
-              <Grid container flex={'row'} justifyContent={'flex-start'}>
+              <Grid container flex={'row'} justifyContent={'space-evenly'}>
                 {/* //dog tap */}
                 <DropdownMenu
                   anchorElm={PageAnchor.dog}
@@ -118,7 +149,7 @@ export default function BottomAppbar() {
                 />
                 <DropdownMenu
                   anchorElm={PageAnchor.smallAnimal}
-                  btnLable="small animal"
+                  btnLable="Small Animal"
                   isMenuOpen={SmallAnimalOpen}
                   endIcon={<KeyboardArrowDownIcon />}
                   handleMenuOpen={handleClickOpen}
@@ -128,8 +159,28 @@ export default function BottomAppbar() {
                 />
                 <DropdownMenu
                   anchorElm={PageAnchor.largeAnimal}
-                  btnLable="large animal"
+                  btnLable="Large Animal"
                   isMenuOpen={LargeAnimalOpen}
+                  endIcon={<KeyboardArrowDownIcon />}
+                  handleMenuOpen={handleClickOpen}
+                  handleMenuClose={handleClose}
+                  menuContainer={<LargeAnimaltabs />}
+                  fullWidthPopover={true}
+                />
+                <DropdownMenu
+                  anchorElm={PageAnchor.brandOpen}
+                  btnLable="Brands"
+                  isMenuOpen={BrandOpen}
+                  endIcon={<KeyboardArrowDownIcon />}
+                  handleMenuOpen={handleClickOpen}
+                  handleMenuClose={handleClose}
+                  menuContainer={<LargeAnimaltabs />}
+                  fullWidthPopover={true}
+                />
+                <DropdownMenu
+                  anchorElm={PageAnchor.consultant}
+                  btnLable="Consultant"
+                  isMenuOpen={ConsultantOpen}
                   endIcon={<KeyboardArrowDownIcon />}
                   handleMenuOpen={handleClickOpen}
                   handleMenuClose={handleClose}
