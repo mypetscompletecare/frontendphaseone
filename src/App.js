@@ -14,7 +14,7 @@ function App() {
       <Header />
       <SliderSection />
       <TopCategories />
-      <CustomCarousel />
+      {/* <CustomCarousel /> */}
       <AboutSections />
       {/* <TopCategories /> */}
       <DisplayBannerWithMsg />

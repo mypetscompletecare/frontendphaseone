@@ -66,7 +66,7 @@ export default function BottomAppbar() {
           dog: null,
           cats: null,
           largeAnimal: null,
-          smallAnimal: event.currentTarget.id,
+          smallAnimal: event.currentTarget,
           brandOpen: null,
           consultant: null,
         });
@@ -127,19 +127,9 @@ export default function BottomAppbar() {
             <Grid item xs={12}>
               <Grid container flex={'row'} justifyContent={'space-evenly'}>
                 {/* //dog tap */}
-                {/* <DropdownMenu
-                  anchorElm={PageAnchor.dog}
-                  btnLable="Dogs"
-                  isMenuOpen={DogOpen}
-                  endIcon={<KeyboardArrowDownIcon />}
-                  handleMenuOpen={handleClickOpen}
-                  handleMenuClose={handleClose}
-                  // menuContainer={<DogstabContainer />}
-                  menuContainer={<h1>Dog container</h1>}
-                  fullWidthPopover={true}
-                /> */}
+
                 <DropdownMenu
-                  anchorElm={PageAnchor.cats}
+                  anchorElm={PageAnchor.dog}
                   btnLable="Dogs"
                   isMenuOpen={DogOpen}
                   endIcon={<KeyboardArrowDownIcon />}
@@ -155,7 +145,8 @@ export default function BottomAppbar() {
                   endIcon={<KeyboardArrowDownIcon />}
                   handleMenuOpen={handleClickOpen}
                   handleMenuClose={handleClose}
-                  menuContainer={<CatstabContainer />}
+                  // menuContainer={<CatstabContainer />}
+                  menuContainer={<DogstabContainer />}
                   fullWidthPopover={true}
                 />
                 <DropdownMenu
