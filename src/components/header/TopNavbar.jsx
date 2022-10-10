@@ -18,6 +18,8 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import DropdownMenu from '../Dropdown/dropdown';
 import SupportTabContainer from './NavbarTabs/SupportTabContainer';
 
+import brandLogo from '../../assets/images/logo.png.webp';
+
 // ----------------------------------------------------------------------
 
 const AppBarStyle = styled((props) => <AppBar {...props} />)(({ theme }) => ({
@@ -41,7 +43,12 @@ export default function TopAppbar() {
         <Box component={Container} pt={1}>
           <Grid container flex={'row'} justifyContent={'space-between'}>
             <Grid item xs={4}>
-              <Typography variant="h6">Petclinic</Typography>
+              {/* <Typography variant="h6">Petclinic</Typography> */}
+              <img
+                src={brandLogo}
+                alt="Brand Logo"
+                style={{ width: 'auto', height: '40px' }}
+              />
             </Grid>
             <Grid item xs={4}>
               <TextField

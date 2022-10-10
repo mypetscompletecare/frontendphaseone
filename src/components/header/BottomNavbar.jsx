@@ -45,7 +45,7 @@ export default function BottomAppbar() {
     switch (event.currentTarget.id) {
       case 'Dogs':
         return setPageAnchor({
-          dog: event.currentTarget.id,
+          dog: event.currentTarget,
           cats: null,
           largeAnimal: null,
           smallAnimal: null,
@@ -127,8 +127,19 @@ export default function BottomAppbar() {
             <Grid item xs={12}>
               <Grid container flex={'row'} justifyContent={'space-evenly'}>
                 {/* //dog tap */}
-                <DropdownMenu
+                {/* <DropdownMenu
                   anchorElm={PageAnchor.dog}
+                  btnLable="Dogs"
+                  isMenuOpen={DogOpen}
+                  endIcon={<KeyboardArrowDownIcon />}
+                  handleMenuOpen={handleClickOpen}
+                  handleMenuClose={handleClose}
+                  // menuContainer={<DogstabContainer />}
+                  menuContainer={<h1>Dog container</h1>}
+                  fullWidthPopover={true}
+                /> */}
+                <DropdownMenu
+                  anchorElm={PageAnchor.cats}
                   btnLable="Dogs"
                   isMenuOpen={DogOpen}
                   endIcon={<KeyboardArrowDownIcon />}
