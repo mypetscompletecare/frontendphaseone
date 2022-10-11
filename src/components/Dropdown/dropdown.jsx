@@ -6,6 +6,8 @@ const ButtonStyle = styled((props) => <Button {...props} />)(({ theme }) => ({
   ...theme.typography.body1,
   position: 'relative',
   textTransform: 'capitalize',
+  fontFamily: 'Nunito',
+  fontWeight: '700',
   color: theme.palette.text.primary,
 }));
 

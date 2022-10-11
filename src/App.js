@@ -1,5 +1,4 @@
 import './App.css';
-import CustomCarousel from './components/Carousel/Carousel';
 import Header from './components/header';
 import AboutSections from './pages/AboutSections';
 import BestSeller from './pages/BestSeller';

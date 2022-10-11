@@ -66,7 +66,7 @@ export default function SliderSection({ title }) {
                       left: '0px',
                     }}
                   >
-                    <Grid item xs={12} sm={12}>
+                    <Grid item xs={12} sm={6}>
                       <Typography
                         variant="h4"
                         align="center"
@@ -85,7 +85,7 @@ export default function SliderSection({ title }) {
                   </Grid>
                 </div>
                 <div style={{ position: 'relative' }}>
-                  <CustomeImage src={image3} alt="Image3" />
+                  <CustomeImage src={image4} alt="Image3" />
                   <Grid
                     container
                     sx={{
