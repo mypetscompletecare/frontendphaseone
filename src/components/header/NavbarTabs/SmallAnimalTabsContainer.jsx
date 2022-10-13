@@ -9,10 +9,6 @@ import {
   Paper,
   Typography,
 } from '@mui/material';
-import PetsIcon from '@mui/icons-material/Pets';
-import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
-import BakeryDiningIcon from '@mui/icons-material/BakeryDining';
-import WebStoriesIcon from '@mui/icons-material/WebStories';
 import { useTheme, styled } from '@mui/material/styles';
 
 const ListHeader = styled((props) => <ListItem {...props} />)(({ theme }) => ({

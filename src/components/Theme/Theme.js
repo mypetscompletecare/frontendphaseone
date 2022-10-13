@@ -9,6 +9,14 @@ let theme = createTheme({
       main: '#edf2ff',
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 640,
+      md: 1024,
+      xl: 1280,
+    },
+  },
 });
 
 let PetClinicTheme = createTheme(theme, {
