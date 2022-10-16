@@ -15,3 +15,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.showme {
+  display: none;
+}
+.showhim:hover .showme {
+  display: block;
+}
+.showhim:hover .hideme {
+  display: none;
+}
+.showhim:hover ~ .hideme2 {
+  display: none;
+}
+
+/* controller  */
+.owl-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  padding: 0px 0px;
+  box-sizing: border-box;
+}
+
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  font-weight: 900 !important;
+  color: white !important;
+  background-color: orange !important;
+  text-align: center;
+  border-radius: 50%;
+}
+.owl-nav button.owl-prev span,
+.owl-nav button.owl-next span {
+  font-size: 25px;
+  padding: 12px !important;
+}
+
+/* bullets indicator  */
+.owl-dots {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 25px;
+}
+
+.owl-dots button.owl-dot.active span,
+.owl-dots button.owl-dot:hover span {
+  background-color: #feae00;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+.owl-dots button.owl-dot {
+  border: 1px solid grey;
+  margin: 0px 10px !important;
+  background: #f4e69e !important;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  position: relative;
+}

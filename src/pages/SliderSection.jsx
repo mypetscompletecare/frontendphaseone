@@ -3,11 +3,11 @@ import { styled } from '@mui/system';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 import { Box, Button, Grid, Typography } from '@mui/material';
 
 import image from '../assets/images/carousel/Slider-1.webp';
 import image2 from '../assets/images/carousel/Slider-2.webp';
-import image3 from '../assets/images/carousel/Slider-3.webp';
 import image4 from '../assets/images/carousel/Slider-4.webp';
 
 const CustomeImage = styled((props) => <img alt={props.altTitle} {...props} />)(
