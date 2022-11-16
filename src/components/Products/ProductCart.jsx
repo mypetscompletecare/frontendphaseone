@@ -1,10 +1,8 @@
 import React from 'react';
 import {
   Card,
-  CardContent,
   Grid,
   Stack,
-  Item,
   Typography,
   Box,
   Chip,
@@ -20,7 +18,7 @@ import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import StarHalfOutlinedIcon from '@mui/icons-material/StarHalfOutlined';
 import CurrencyRupeeOutlinedIcon from '@mui/icons-material/CurrencyRupeeOutlined';
 
-export default function ProductCart() {
+export default function ProductCart({}) {
   return (
     <Box>
       <Card>
@@ -95,18 +93,37 @@ export default function ProductCart() {
             component="h6"
             color="Primary"
             style={{ fontWeight: '600' }}
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          </Typography>
+          ></Typography>
           {/* {product description } */}
           <Typography variant="body2" color="GrayText" gutterBottom>
             dolor sit, amet consectetur adipisicing elit. Voluptas eligendi odio
             impedit hic blanditiis. amet consectetur
           </Typography>
           {/* rating | review  */}
-          <br />
+
+          <Grid container component={Box} mt={1} mb={2}>
+            <Grid item xs={12}>
+              <Typography
+                color="GrayText"
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'left',
+                  fontSize: '14px',
+                }}
+              >
+                <StarBorderOutlinedIcon style={{ color: 'goldenrod' }} />
+                <StarBorderOutlinedIcon style={{ color: 'goldenrod' }} />
+                <StarBorderOutlinedIcon style={{ color: 'goldenrod' }} />
+                <StarBorderOutlinedIcon style={{ color: 'goldenrod' }} />
+                <StarHalfOutlinedIcon style={{ color: 'goldenrod' }} />
+                <span>{` | 4.9 | 26 reviews `}</span>
+              </Typography>
+            </Grid>
+          </Grid>
+          {/* options  add to cart */}
           <Grid container>
-            <Grid item xs={4}>
+            <Grid item xs={12}>
               <Typography
                 color={blue[800]}
                 style={{
@@ -131,32 +148,21 @@ export default function ProductCart() {
                 </span>
               </Typography>
             </Grid>
-            <Grid item xs={8}>
-              <Typography
-                color="GrayText"
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: '14px',
-                }}
-              >
-                <StarBorderOutlinedIcon style={{ color: 'goldenrod' }} />
-                <StarBorderOutlinedIcon style={{ color: 'goldenrod' }} />
-                <StarBorderOutlinedIcon style={{ color: 'goldenrod' }} />
-                <StarHalfOutlinedIcon style={{ color: 'goldenrod' }} />
-                <span>{` | 4.9  `}</span>
-                <span>{` | 26 reviews`}</span>
-              </Typography>
-            </Grid>
-          </Grid>
-          {/* options  add to cart */}
-          <Grid container>
             <Grid item xs={12} component={Box} mt={2} mb={1}>
               <Stack direction="row" spacing={1}>
-                <Chip label="Small" variant="outlined" color="primary" />
-                <Chip label="Medium" variant="outlined" color="primary" />
-                <Chip label="Large" variant="outlined" />
+                <Chip
+                  label="Small"
+                  variant="outlined"
+                  color="primary"
+                  size="small"
+                />
+                <Chip
+                  label="Medium"
+                  variant="outlined"
+                  color="primary"
+                  size="small"
+                />
+                <Chip label="Large" variant="outlined" size="small" />
               </Stack>
             </Grid>
             <Grid item xs={12} component={Box} my={2}>

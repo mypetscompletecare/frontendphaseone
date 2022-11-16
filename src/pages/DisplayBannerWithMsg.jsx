@@ -10,7 +10,7 @@ export default function DisplayBannerWithMsg() {
       <Container maxWidth="xl">
         <Grid container>
           <Grid item xs={12} sm={3}>
-            <ProductCart />
+            {/* <ProductCart /> */}
           </Grid>
         </Grid>
       </Container>

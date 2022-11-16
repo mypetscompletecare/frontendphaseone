@@ -13,11 +13,9 @@ function App() {
       <Header />
       <SliderSection />
       <TopCategories />
-      {/* <CustomCarousel /> */}
       <AboutSections />
-      {/* <TopCategories /> */}
-      <DisplayBannerWithMsg />
       <BestSeller />
+      <DisplayBannerWithMsg />
       <Footer />
     </div>
   );
