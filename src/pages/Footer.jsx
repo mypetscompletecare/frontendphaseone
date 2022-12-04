@@ -3,7 +3,6 @@ import {
   Avatar,
   Box,
   Grid,
-  Link,
   List,
   ListItem,
   ListItemAvatar,
@@ -27,7 +26,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 import { grey } from '@mui/material/colors';
-import { useTheme, styled } from '@mui/material/styles';
+import {  styled } from '@mui/material/styles';
 export default function Footer() {
   // getting data
   const date = new Date();

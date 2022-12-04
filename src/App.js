@@ -2,8 +2,9 @@ import './App.css';
 import Header from './components/header';
 import AboutSections from './pages/AboutSections';
 import BestSeller from './pages/BestSeller';
-import DisplayBannerWithMsg from './pages/DisplayBannerWithMsg';
 import Footer from './pages/Footer';
+import PopularBrandsSection from './pages/PopularBrandsSection';
+import PuppyOrKittenSection from './pages/PuppyOrKittenSection';
 import SliderSection from './pages/SliderSection';
 import TopCategories from './pages/TopCategories';
 
@@ -15,7 +16,8 @@ function App() {
       <TopCategories />
       <AboutSections />
       <BestSeller />
-      <DisplayBannerWithMsg />
+      <PuppyOrKittenSection />
+      <PopularBrandsSection />
       <Footer />
     </div>
   );

@@ -9,10 +9,10 @@ import {
 } from '@mui/material';
 
 // Imported inage
-import aboutUs from '../assets/images/aboutUs.webp';
+import kittenImg from '../assets/images/puppyOrKitten.webp';
 
 const Section = styled((props) => <section {...props} />)(({ theme }) => ({
-  backgroundImage: `url(${aboutUs})`,
+  backgroundImage: `url(${kittenImg})`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center center',
   backgroundSize: 'contained',
@@ -22,11 +22,11 @@ const Section = styled((props) => <section {...props} />)(({ theme }) => ({
   overflow: 'hidden',
   margin: '50px 0px 30px 0px',
   [theme.breakpoints.down('md')]: {
-    backgroundPosition: 'center center',
-    minHeight: '450px',
+    backgroundPosition: 'top right',
+    minHeight: '400px',
   },
   [theme.breakpoints.down('md')]: {
-    backgroundPosition: 'top center',
+    backgroundPosition: 'top right',
     minHeight: '350px',
   },
 }));
@@ -78,23 +78,25 @@ const SectionDescription = styled((props) => <Typography {...props} />)(
 const CustomButton = styled((props) => <Button {...props} />)(({ theme }) => ({
   fontSize: '16px',
   fontWeight: '700',
-  fill: '#FFFFFF',
-  color: '#FFFFFF',
-  backgroundColor: '#000000',
+  fill: '#000000',
+  color: '#000000',
+  backgroundColor: '#FFFFFF',
   borderRadius: '30px 30px 30px 30px',
   margin: '16px 8px 16px 0px',
   padding: '13px 25px 13px 25px',
   textTransform: 'capitalize',
   ':hover': {
-    color: '#000000',
-    backgroundColor: '#FFFFFF',
+    color: '#FFFFFF',
+    backgroundColor: '#000000',
   },
   [theme.breakpoints.down('md')]: {
     fontSize: '14px',
     padding: '8px 16px 8px 16px',
+    textAlign: 'left',
   },
   [theme.breakpoints.down('md')]: {
     padding: '8px 16px 8px 16px',
+    textAlign: 'left',
     fontSize: '14px',
     lineHeight: '18px',
     fontWeight: '600',
@@ -114,22 +116,20 @@ const CustomBtnWrapper = styled((props) => <Box {...props} />)(({ theme }) => ({
   },
 }));
 
-export default function AboutSections() {
+export default function PuppyOrKittenSection() {
   return (
-    <Section id="AboutSections">
+    <Section id="PuppyOrKittenSection">
       <Container maxWidth="md">
         <Grid container>
-          <Grid item xs={12} sm={4} md={4} />
           <Grid item xs={12} sm={8} md={8}>
             <Box sx={{ padding: '60px 0px 30px 0px' }}>
-              <SectionTitle> About Petio </SectionTitle>
+              <SectionTitle> New Puppy or Kitten? </SectionTitle>
               <SectionDescription>
-                'Petio is a category-defining health and wellness company
-                focused on improving the lives of pets, pet parents and our own
-                Petco partners';
+                Discover everything you need <br /> to make them feel at home
               </SectionDescription>
               <CustomBtnWrapper>
-                <CustomButton>About Us</CustomButton>
+                <CustomButton>Shop Kitten</CustomButton>
+                <CustomButton>Shop Puppy</CustomButton>
               </CustomBtnWrapper>
             </Box>
           </Grid>
