@@ -20,7 +20,7 @@ const CustomeImage = styled((props) => <img alt={props.altTitle} {...props} />)(
 export default function SliderSection({ title }) {
   return (
     <div>
-      <Grid coantainer>
+      <Grid container>
         <Grid item xs={12} sm={12}>
           <Typography variant="h6">{title}</Typography>
         </Grid>

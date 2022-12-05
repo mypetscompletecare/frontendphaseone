@@ -25,7 +25,7 @@ const Section = styled((props) => <section {...props} />)(({ theme }) => ({
     backgroundPosition: 'center center',
     minHeight: '450px',
   },
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('xs')]: {
     backgroundPosition: 'top center',
     minHeight: '350px',
   },
@@ -45,7 +45,7 @@ const SectionTitle = styled((props) => <Typography {...props}></Typography>)(
       lineHeight: '60px',
       textAlign: 'left',
     },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('xs')]: {
       fontSize: '45px',
       lineHeight: '45px',
       textAlign: 'left',
@@ -66,7 +66,7 @@ const SectionDescription = styled((props) => <Typography {...props} />)(
       fontWeight: '500',
       textAlign: 'left',
     },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('xs')]: {
       fontSize: '18px',
       lineHeight: '18px',
       fontWeight: '600',
@@ -93,7 +93,7 @@ const CustomButton = styled((props) => <Button {...props} />)(({ theme }) => ({
     fontSize: '14px',
     padding: '8px 16px 8px 16px',
   },
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('xs')]: {
     padding: '8px 16px 8px 16px',
     fontSize: '14px',
     lineHeight: '18px',
@@ -108,7 +108,7 @@ const CustomBtnWrapper = styled((props) => <Box {...props} />)(({ theme }) => ({
     textAlign: 'left',
     margin: ' 24px 0px',
   },
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('xs')]: {
     textAlign: 'left',
     margin: ' 16px 0px',
   },

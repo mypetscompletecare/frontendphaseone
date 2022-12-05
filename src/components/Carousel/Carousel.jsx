@@ -11,7 +11,7 @@ import image4 from '../../assets/images/carousel/Slider-4.webp';
 export default function CustomCarousel({ title }) {
   return (
     <div>
-      <Grid coantainer>
+      <Grid container>
         <Grid item xs={12} sm={12}>
           <Typography variant="h6">{title}</Typography>
         </Grid>

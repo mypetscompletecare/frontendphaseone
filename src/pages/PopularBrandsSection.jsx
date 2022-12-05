@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  Grid,
-  Container,
-  styled,
-  Typography,
-  Box,
-  Button,
-} from '@mui/material';
-
-// Imported inage
-import kittenImg from '../assets/images/puppyOrKitten.webp';
+import { Grid, Container, styled, Typography, Box } from '@mui/material';
 
 const Section = styled((props) => <section {...props} />)(({ theme }) => ({
   margin: '50px 0px 30px 0px',
@@ -30,7 +20,7 @@ const SectionTitle = styled((props) => <Typography {...props}></Typography>)(
       fontSize: '60px',
       lineHeight: '60px',
     },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('xs')]: {
       fontSize: '45px',
       lineHeight: '45px',
     },
@@ -47,7 +37,7 @@ const ImageBoxItem = styled((props) => <Box {...props} />)(({ theme }) => ({
     textAlign: 'left',
     margin: ' 24px 0px',
   },
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('xs')]: {
     textAlign: 'left',
     margin: ' 16px 0px',
   },
