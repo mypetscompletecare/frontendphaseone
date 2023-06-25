@@ -15,8 +15,7 @@ import {
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import DropdownMenu from '../Dropdown/dropdown';
-import SupportTabContainer from './NavbarTabs/SupportTabContainer';
+
 
 import brandLogo from '../../assets/images/logo.png.webp';
 
